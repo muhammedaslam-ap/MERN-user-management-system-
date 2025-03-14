@@ -1,0 +1,96 @@
+/* Centering the Profile Container */
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e1e2e, #2a2a42, #3d3d64);
+    padding: 20px;
+  }
+  
+  /* Profile Card with Glassmorphism */
+  .profile-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  /* Gradient Border Effect */
+  .profile-card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #962353, #391c7e);
+    z-index: -1;
+    border-radius: 22px;
+  }
+  
+  /* Profile Title */
+  .profile-title {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #f5eaee, #9a7be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+  }
+  
+  /* Labels */
+  .profile-card label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin: 12px 0 5px;
+    color: #ddd;
+  }
+  
+  /* Input Fields */
+  .profile-card input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    outline: none;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .profile-card input:focus {
+    border-color: #00c6ff;
+    box-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+  }
+  
+  /* Submit Button */
+  .profile-button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #971f51, #2f0986);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profile-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #ff4f87, #7a3ae5);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+  
