@@ -6,8 +6,14 @@ export class userRepository{
         await userModel.create(data)
     }
     async findByEmail(email: string) {
+        console.log()
        return await userModel.findOne({ email });
       }
+
+    async findByName(name: string){
+        return await userModel.findOne({ name });
+    }
+
     async UserAuth(data:UserLogin) {
        return await userModel.findOne({email:data.email});
     }

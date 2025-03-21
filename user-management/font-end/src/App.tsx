@@ -1,4 +1,6 @@
-import Signup from './components/signup/signup';
+// import Signup from './components/signup/signup';
+import { lazy, Suspense } from 'react';
+const LazySignup  = lazy(()=>import('./components/signup/signup'))
 import Login from './components/login/userLogin';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Fixed name
 import {ToastContainer } from "react-toastify";
@@ -22,7 +24,14 @@ function App() {
         <Routes>
           <Route path="/signup" element={  
             <PublicRoute>
-              <Signup />
+              <Suspense fallback={
+                <>
+                <center> <h1>loading.... signup</h1></center>
+                </>
+              }>
+                <LazySignup/>
+              </Suspense>
+              {/* <Signup /> */}
             </PublicRoute>
           }/>
           <Route path="/login" element={ 

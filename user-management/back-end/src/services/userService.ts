@@ -10,6 +10,12 @@ export class userService{
 
     async createUser(data:UserRegister){
         const alreadyExisting = await this.userRepository.findByEmail(data.email);
+        const alreadyname = await this.userRepository.findByName(data.name)
+
+        if(alreadyname){
+          throw new Error("name already Existing");
+        }
+
         if (alreadyExisting) {
             throw new Error("Email already Existing");
         }
@@ -20,6 +26,7 @@ export class userService{
           password: hashedPassword,
         };
         await this.userRepository.createUser(newUser);
+
     }
     
     async AuthUser(data: UserLogin) {

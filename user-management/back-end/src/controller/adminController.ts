@@ -32,10 +32,11 @@ export class AdminController{
             console.log("Error in login Admin", error);
 
             if (error.message.includes("Email Doesnot match") || error.message.includes("The password doesnot match")) {
-                return res.status(401).json({
+                res.status(401).json({
                     success: false,
                     message: error.message, 
                 });
+                return
             }
     
             res.status(500).json({
